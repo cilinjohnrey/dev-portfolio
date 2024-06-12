@@ -1,10 +1,12 @@
 <script setup>
-import Example from './components/Example.vue'
+import NavBar from './components/NavBar.vue'
+import Hero from './components/Hero.vue'
 </script>
 
 <template>
   <main>
-    <Example />
+    <NavBar />
+    <Hero />
   </main>
 </template>
 
