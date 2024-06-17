@@ -28,12 +28,12 @@
                 <p>Tech Stack</p>
                 <span class="techstack-border"></span>
                 <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,vue,php,laravel,mysql" alt="Tech Stack Icons">
+                    <img src="https://skillicons.dev/icons?i=html,css,js,nuxt,vue,php,laravel,mysql" alt="Tech Stack Icons">
                 </div>
             </div>
         </div>
         <div class="hero-image">
-            <img src="/Cilin.png" alt="John Rey">
+            <img src="/JC.png" alt="John Rey">
         </div>
     </div>
 </template>
@@ -42,14 +42,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px;
+    padding: 60px 100px;
     background-color: #F9F9F9;
     box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
-    height: auto;
 }
 
 .hero-text {
-    max-width: 70%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .hero-text p, h1 {
@@ -89,15 +91,12 @@
 
 .hire-me {
     margin-right: 10px;
-    padding: 20px;
+    padding: 14px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-}
-
-.hire-me {
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: #147EFB;
     color: white;
 }
@@ -120,11 +119,12 @@
 
 .social-icons {
     display: flex;
-    margin: 20px 0;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .social-icons a {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .social-icons .social-icon {
@@ -137,7 +137,6 @@
 
 .tech-stack {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: 20px 0;
 }
@@ -149,20 +148,31 @@
 }
 
 .tech-stack .techstack-border {
-    margin: 0px 20px;
+    margin: 0 15px;
     height: 30px;
+    flex-grow: 1;
     border-right: 2px solid #2D2E32;
 }
 
-
 .icons img {
     width: 100%;
-    margin-top: 10px;
+    height: auto;
+}
+
+.hero-image {
+    flex-shrink: 0; /* ensures the image doesn’t shrink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* adjusted padding */
+    background-color: #147EFB;
+    border-radius: 50%; /* makes the background color cover underneath a circular image */
 }
 
 .hero-image img {
+    width: 400px; /* adjusted width */
+    height: 400px; /* keeping aspect ratio */
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    object-fit: cover;
 }
 </style>
