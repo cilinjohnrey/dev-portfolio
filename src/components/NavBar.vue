@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 60px;
+    padding: 10px 100px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Para naay shadow effect */
     height: 80px;
