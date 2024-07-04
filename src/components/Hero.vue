@@ -5,8 +5,12 @@
             <h1 class="firstname-text">John Rey, <span class="lastname-text">Cilin</span></h1>
             <p class="a-text">A <span class="skill-text">Web Developer</span></p>
             <div class="buttons">
-                <button class="hire-me" @click="scrollTo('hire-me')">HIRE ME</button>
-                <span class="portfolio" @click="scrollTo('portfolio')">VIEW MY PORTFOLIO</span>
+                <router-link to="#contact-me" class="hire-me">
+                    HIRE ME
+                </router-link>
+                <router-link to="#portfolio" class="portfolio">
+                    VIEW MY PORTFOLIO
+                </router-link>
             </div>
             <div class="social-icons">
                 <a class="social-icon" href="https://www.linkedin.com/in/john-rey-cilin-418485238/" target="_blank">
@@ -37,20 +41,6 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-  name: 'Hero',
-  methods: {
-    scrollTo(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        window.location.hash = `#${sectionId}`;
-      }
-    }
-  }
-}
-</script>
 <style>
 .hero-container {
     display: flex;
@@ -104,6 +94,7 @@ export default {
 }
 
 .hire-me {
+    display: inline-block;
     margin-right: 10px;
     padding: 14px 20px;
     border: none;
@@ -113,6 +104,8 @@ export default {
     border-radius: 8px;
     background-color: #147EFB;
     color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .hire-me:hover {
@@ -120,11 +113,13 @@ export default {
 }
 
 .portfolio {
+    display: inline-block;
     color: #2D2E32;
     margin: 0 15px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .portfolio:hover {
