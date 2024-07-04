@@ -47,6 +47,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 60px 300px;
+    padding-top: 120px;
     background-color: #F9F9F9;
     box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
