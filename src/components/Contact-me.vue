@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-me-container">
+    <div id="contact-me" class="contact-me-container">
       <h2 class="contact-me-title">CONTACT ME</h2>
         <div class="form-container">
             <h3 class="hit-me-up">Don't be shy! Hit me up! 👇</h3>

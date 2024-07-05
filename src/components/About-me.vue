@@ -7,7 +7,7 @@
         <h2>ABOUT ME</h2>
         <p>💻 I'm a devoted software engineer with skills in both front-end and back-end web application development, driven by a passion using technology to solve real-world problems, make a positive impact on communities.</p>
         <p>🚀My startup journey at hinulawanlab.com, Inc. exposed me to the dynamic world of entrepreneurship, help build Passafund, an innovative lending and borrowing marketplace.</p>
-        <p>🌏My ultimate goal is to collaborate with visionary organizations committed to using innovation to address societal challenges and make the world a better place to live.</p>
+        <p id="portfolio">🌏My ultimate goal is to collaborate with visionary organizations committed to using innovation to address societal challenges and make the world a better place to live.</p>
     </div>
 </div>
 </template>
