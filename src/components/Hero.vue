@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-container">
+    <div id="home" class="hero-container">
         <div class="hero-text">
             <p class="hello-text">Hello, I'm</p>
             <h1 class="firstname-text">John Rey, <span class="lastname-text">Cilin</span></h1>
@@ -31,7 +31,7 @@
             <div class="tech-stack">
                 <p>Tech Stack</p>
                 <span class="techstack-border"></span>
-                <div class="icons">
+                <div id="about-me" class="icons">
                     <img src="https://skillicons.dev/icons?i=html,css,js,nuxt,vue,php,laravel,mysql" alt="Tech Stack Icons">
                 </div>
             </div>

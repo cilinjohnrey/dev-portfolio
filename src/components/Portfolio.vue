@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio" class="portfolio-container">
+  <div class="portfolio-container">
     <h2 class="portfolio-title">PORTFOLIO</h2>
     <Carousel v-if="portfolioItems.length">
       <Slide v-for="item in portfolioItems" :key="item.id">
