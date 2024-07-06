@@ -190,15 +190,32 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: #147EFB;
-    border-radius: 50%;
 }
 
 .hero-image img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
+    border: 5px solid #147EFB;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+        border-radius: 60% 30% 50% 60% / 30% 50% 60% 30%;
+    }
+    75% {
+        border-radius: 50% 60% 30% 50% / 30% 50% 30% 50%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 </style>
