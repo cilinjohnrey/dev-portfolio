@@ -28,13 +28,6 @@
                     </svg>
                 </a>
             </div>
-            <div class="tech-stack">
-                <p>Tech Stack</p>
-                <span class="techstack-border"></span>
-                <div id="about-me" class="icons">
-                    <img src="https://skillicons.dev/icons?i=html,css,js,nuxt,vue,php,laravel,mysql" alt="Tech Stack Icons">
-                </div>
-            </div>
         </div>
         <div class="hero-image">
             <img src="/JC.png" alt="John Rey">
