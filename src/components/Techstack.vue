@@ -71,13 +71,13 @@ export default {
 }
 
 .tech-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
 }
 
 .techstack-item p {
     color: white;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 </style>
