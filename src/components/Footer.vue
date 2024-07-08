@@ -32,6 +32,7 @@
 }
 
 .copyright-text {
+    font-size: 16px;
     color: #FFFFFF;
 }
 
