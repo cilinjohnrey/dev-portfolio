@@ -26,7 +26,7 @@
                         required
                     ></textarea>
                 </div>
-                <button class="send-button"type="submit">SEND MESSAGE</button>
+                <button class="send-button"type="submit">Send Message</button>
             </form>
         </div>
     </div>
