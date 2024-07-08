@@ -4,6 +4,14 @@ import './assets/main.css';
 import { createRouter, createWebHistory } from 'vue-router';
 import VueWriter from "vue-writer";
 import VanillaTilt from 'vanilla-tilt';
+import SwiperCore from 'swiper';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Swiper as SwiperClass, SwiperSlide as SwiperSlideClass } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const routes = [
   { path: '/', component: App },
@@ -42,4 +50,6 @@ app.directive('tilt', {
       }
   },
 });
+app.component('Swiper', SwiperClass);
+app.component('SwiperSlide', SwiperSlideClass);
 app.mount('#app');
