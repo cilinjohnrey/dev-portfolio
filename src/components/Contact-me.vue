@@ -3,12 +3,12 @@
       <h2 class="contact-me-title">CONTACT ME</h2>
         <div class="form-container">
             <h3 class="hit-me-up">Don't be shy! Hit me up! 👇</h3>
-            <form @submit.prevent="submitForm">
+            <form class="form-element" @submit.prevent="submitForm">
                 <div class="form-group one">
                     <input
                         type="text"
                         v-model="name"
-                        placeholder="Name*"
+                        placeholder="Full name*"
                         required
                     />
                     <input
@@ -94,9 +94,10 @@ methods: {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px 100px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 60px 150px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     background-color: #F9F9F9;
 }
 
@@ -105,7 +106,10 @@ methods: {
     margin-bottom: 40px;
 }
 
-.form-container form {
+.form-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -126,7 +130,7 @@ input[type="email"],
     width: 100%;
     padding: 20px;
     border: 1px solid #ced4da;
-    border-radius: 4px;
+    border-radius: 30px;
     font-size: 18px;
     font-weight: 500;
 }
@@ -147,14 +151,17 @@ input[type="email"]:focus,
 }
 
 .send-button {
-    width: 100%;
-    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+    padding: 15px;
     background-color: #4d73ff;
     color: white;
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
