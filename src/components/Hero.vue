@@ -56,17 +56,17 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 300px;
     padding-top: 120px;
     background-color: #F9F9F9;
     box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
 
 .hero-text {
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 300px;
+    padding-bottom: 60px;
 }
 
 .hero-text p, h1 {
@@ -186,10 +186,11 @@ export default {
 }
 
 .hero-image {
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 300px;
+    padding-bottom: 60px;
 }
 
 .hero-image img {
