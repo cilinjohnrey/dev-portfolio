@@ -7,3 +7,159 @@ html, body {
     font-family: "Open Sans";
     scroll-behavior: smooth;
 }
+
+@media only screen and (max-width: 1400px) {
+    .navbar-elements{
+        padding: 10px 60px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 1000;
+    }
+
+    .navbar-links.open {
+        display: flex;
+    }
+
+    .navbar-links .close {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
+
+    .navbar-links svg {
+        width: 24px;
+        height: 24px;
+        fill: #2D2E32;
+    }
+
+    .navbar-links a {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+
+    .navbar-links a:hover {
+        color: #147EFB;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        align-items: center;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .hero-text .hello-text {
+        font-size: 28px;
+    }
+    
+    .hero-text .firstname-text {
+        font-size: 43px;
+    }
+    
+    .hero-text .lastname-text {
+        font-size: 43px;
+    }
+    
+    .hero-text .a-text {
+        font-size: 24px;
+    }
+
+    .hero-text .skill-text {
+        font-size: 27px;
+    }
+
+    .hire-me {
+        font-size: 15px;
+    }
+
+    .portfolio {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        padding-bottom: 50px;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .navbar-elements {
+        padding: 10px 60px;
+    }
+
+    .navbar-links a {
+        font-size: 20px;
+    }
+
+    .hero-text .hello-text {
+        font-size: 22px;
+    }
+    
+    .hero-text .firstname-text {
+        font-size: 38px;
+    }
+    
+    .hero-text .lastname-text {
+        font-size: 38px;
+    }
+    
+    .hero-text .a-text {
+        font-size: 19px;
+    }
+
+    .hero-text .skill-text {
+        font-size: 22px;
+    }
+
+    .hire-me {
+        font-size: 14px;
+    }
+
+    .portfolio {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-container {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .navbar-elements {
+        padding: 10px 60px;
+    }
+
+    .navbar-links a {
+        font-size: 18px;
+    }
+}
