@@ -8,6 +8,25 @@ html, body {
     scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 1720px) {
+    .about-me-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .about-me-image {
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .about-me-text {
+        align-items: center;
+        padding: 0px;
+        margin: 0px 100px;
+    }
+}
+
 @media only screen and (max-width: 1400px) {
     .navbar-elements{
         padding: 10px 60px;
@@ -158,6 +177,10 @@ html, body {
     }
 
     .techstack-swiper-container {
+        width: 600px;
+    }
+
+    .about-me-container {
         width: 600px;
     }
 }
