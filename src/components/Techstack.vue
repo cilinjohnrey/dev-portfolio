@@ -1,21 +1,23 @@
 <template>
     <div class="techstack-container">
-        <swiper 
-            :slides-per-view="6"
-            :spaceBetween="150"
-            :loop="true"
-            :autoplay="{ delay: 3000, disableOnInteraction: false }"
-            :modules="modules"
-            class="mySwiper"
-            id="about-me"
-        >
-            <swiper-slide v-for="(tech, index) in techs" :key="index">
-                <div class="techstack-item">
-                    <img :src="tech.icon" :alt="tech.name" class="tech-icon" />
-                    <p>{{ tech.name }}</p>
-                </div>
-            </swiper-slide>
-        </swiper>
+        <div class="techstack-swiper-container">
+            <swiper 
+                :breakpoints="breakpoints"
+                :space-between="0"
+                :loop="true"
+                :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                :modules="modules"
+                class="techstack-swiper"
+                id="about-me"
+            >
+                <swiper-slide v-for="(tech, index) in techs" :key="index">
+                    <div class="techstack-item">
+                        <img :src="tech.icon" :alt="tech.name" class="tech-icon" />
+                        <p>{{ tech.name }}</p>
+                    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
     </div>
 </template>
 
@@ -50,6 +52,32 @@ export default {
                 { name: 'Laravel', icon: 'https://skillicons.dev/icons?i=laravel' },
                 { name: 'MySQL', icon: 'https://skillicons.dev/icons?i=mysql' },
             ],
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                640: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                870: {
+                    slidesPerView: 4,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+                1280: {
+                    slidesPerView: 4,
+                },
+                1400: {
+                    slidesPerView: 4,
+                },
+                1600: {
+                    slidesPerView: 6,
+                },
+            },
         };
     },
 };
@@ -59,11 +87,15 @@ export default {
 @import "swiper/swiper-bundle.css";
 
 .techstack-container {
+    width: 100%;
+    background-color: #2d2e32;
+}
+
+.techstack-swiper-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 300px;
-    background-color: #2d2e32;
 }
 
 .techstack-item {
