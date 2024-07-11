@@ -108,6 +108,10 @@ html, body {
         width: 300px;
         height: 300px;
     }
+
+    .techstack-swiper-container {
+        padding: 60px 0px !important;
+    }
 }
 
 @media only screen and (max-width: 920px) {
@@ -150,6 +154,10 @@ html, body {
 
 @media only screen and (max-width: 600px) {
     .hero-container {
+        width: 600px;
+    }
+
+    .techstack-swiper-container {
         width: 600px;
     }
 }
