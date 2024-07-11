@@ -15,7 +15,7 @@
 .about-me-container {
     display: flex;
     justify-content: space-between;
-    padding: 60px 300px;
+    padding: 60px 0px;
     background-color: #FFFFFF;
 }
 
@@ -25,6 +25,7 @@
     justify-content: flex-start;
     width: 50%;
     perspective: 1000px;
+    padding-left: 300px;
 }
 
 .about-me-image img {
@@ -37,6 +38,8 @@
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding-right: 300px;
+    padding-left: 50px;
 }
 
 .about-me-text h2 {
