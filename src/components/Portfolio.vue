@@ -1,36 +1,38 @@
 <template>
   <div class="portfolio-container">
-    <h2 class="portfolio-title">PORTFOLIO</h2>
-    <Swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
-      delay: 2500,
-      disableOnInteraction: true,
-    }" :pagination="{
-        clickable: true,
-      }" :navigation="true" @autoplayTimeLeft="onAutoplayTimeLeft" class="mySwiper">
-      <SwiperSlide v-for="item in portfolioItems" :key="item.id">
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img :src="item.image" :alt="item.title">
-          </div>
-          <div class="portfolio-description">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-            <div class="tech-stacks-used">
-              <span v-for="tech in item.techStack" :key="tech">{{ tech }}</span>
+    <div class="portfolio-swiper-container">
+      <h2 class="portfolio-title">PORTFOLIO</h2>
+      <Swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
+        delay: 2500,
+        disableOnInteraction: true,
+      }" :pagination="{
+      clickable: true,
+    }" :navigation="true" @autoplayTimeLeft="onAutoplayTimeLeft" class="portfolioSwiper">
+        <SwiperSlide v-for="item in portfolioItems" :key="item.id">
+          <div class="portfolio-item">
+            <div class="portfolio-image">
+              <img :src="item.image" :alt="item.title">
             </div>
-            <a class="project-link" :href="item.link" target="_blank">Visit</a>
+            <div class="portfolio-description">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              <div class="tech-stacks-used">
+                <span v-for="tech in item.techStack" :key="tech">{{ tech }}</span>
+              </div>
+              <a class="project-link" :href="item.link" target="_blank">Visit</a>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <template #container-end>
-        <div class="autoplay-progress">
-          <svg viewBox="0 0 48 48" ref="progressCircle">
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref="progressContent"></span>
-        </div>
-      </template>
-    </Swiper>
+        </SwiperSlide>
+        <template #container-end>
+          <div class="autoplay-progress">
+            <svg viewBox="0 0 48 48" ref="progressCircle">
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref="progressContent"></span>
+          </div>
+        </template>
+      </Swiper>
+    </div>
   </div>
 </template>
 
@@ -83,7 +85,7 @@ export default {
           title: 'PASSAFUND LENDER APP (June 2023)',
           description: 'Passafund lender app is a website where the lenders navigate borrower loan application from borrower app. Find borrower loan that fit with their loan approval matrix. Contact borrower directly in just a few clicks.',
           techStack: ['HTML', 'CSS', 'Vuetify', 'Nuxt.js', 'Laravel'],
-          image: '/Passafund-lender.jpeg',
+          image: '/Passafund-lender.png',
           link: 'https://lender.passafund.com/',
         },
       ],
@@ -97,7 +99,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 300px;
   background-color: #F9F9F9;
   box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
@@ -107,6 +108,10 @@ export default {
   align-items: flex-start;
   font-weight: bold;
   color: #147EFB;
+}
+
+.portfolio-swiper-container {
+  margin: 60px 300px;
 }
 
 .swiper {
@@ -169,19 +174,23 @@ export default {
 .portfolio-item {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   width: 100%;
+  height: 100%;
   padding: 90px;
   border-radius: 30px;
+  background-color: #fff;
 }
 
-.portfolio-item .portfolio-image {
-  width: 49%;
-}
-
-.portfolio-item .portfolio-image img {
+.portfolio-image {
   width: 100%;
+  height: 50%;
+}
+
+.portfolio-image img {
+  width: 516px;
+  height: 319px;
   border-radius: 30px;
   box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
@@ -191,7 +200,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  width: 49%;
+  width: 100%;
 }
 
 .portfolio-description h3 {
