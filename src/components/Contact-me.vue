@@ -1,32 +1,22 @@
 <template>
     <div id="contact-me" class="contact-me-container">
-      <h2 class="contact-me-title">CONTACT ME</h2>
+        <h2 class="contact-me-title">CONTACT ME</h2>
         <div class="form-container">
-            <h3 class="hit-me-up">Don't be shy! Hit me up! 👇</h3>
             <form class="form-element" @submit.prevent="submitForm">
-                <div class="form-group one">
-                    <input
-                        type="text"
-                        v-model="name"
-                        placeholder="Full name*"
-                        required
-                    />
-                    <input
-                        type="email"
-                        v-model="email"
-                        placeholder="Email*"
-                        required
-                    />
+                <div class="form-group form-group-one">
+                    <h3 class="hit-me-up">Don't be shy! Hit me up! 👇</h3>
                 </div>
-                <div class="form-group two">
-                    <textarea
-                        class="message-textarea"
-                        v-model="message"
-                        placeholder="Your message here*"
-                        required
-                    ></textarea>
+                <div class="form-group form-group-two">
+                    <input class="full-name" type="text" v-model="name" placeholder="Full name*" required />
+                    <input class="email" type="email" v-model="email" placeholder="Email*" required />
                 </div>
-                <button class="send-button"type="submit">Send Message</button>
+                <div class="form-group form-group-three">
+                    <textarea class="message-textarea" v-model="message" placeholder="Your message here*"
+                        required></textarea>
+                </div>
+                <div class="form-group form-group-four">
+                    <button class="send-button" type="submit">Send Message</button>
+                </div>
             </form>
         </div>
     </div>
@@ -36,41 +26,41 @@
 import emailjs from 'emailjs-com';
 
 export default {
-name: 'ContactMe',
-data() {
-    return {
-    name: '',
-    email: '',
-    message: ''
-    };
-},
-methods: {
-    async submitForm() {
-    try {
-        let emailParams = {
-        from_name: this.name,
-        from_email: this.email,
-        message: this.message,
+    name: 'ContactMe',
+    data() {
+        return {
+            name: '',
+            email: '',
+            message: ''
         };
+    },
+    methods: {
+        async submitForm() {
+            try {
+                let emailParams = {
+                    from_name: this.name,
+                    from_email: this.email,
+                    message: this.message,
+                };
 
-        let response = await emailjs.send(
-        'service_abcf58m',
-        'template_xfo5ngd',
-        emailParams,
-        '7cT1tK_lue0nsu5Oj'
-        );
+                let response = await emailjs.send(
+                    'service_abcf58m',
+                    'template_xfo5ngd',
+                    emailParams,
+                    '7cT1tK_lue0nsu5Oj'
+                );
 
-        this.name = '';
-        this.email = '';
-        this.message = '';
+                this.name = '';
+                this.email = '';
+                this.message = '';
 
-        alert('Your message has been sent successfully!');
-    } catch (error) {
-        console.error('Failed to send your message:', error);
-        alert('Oops! Something went wrong. Please try again.');
+                alert('Your message has been sent successfully!');
+            } catch (error) {
+                console.error('Failed to send your message:', error);
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        }
     }
-    }
-}
 };
 </script>
 
@@ -79,7 +69,7 @@ methods: {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px 300px;
+    width: 100%;
     background-color: #FFFFFF;
 }
 
@@ -88,44 +78,52 @@ methods: {
     align-items: flex-start;
     font-weight: bold;
     color: #147EFB;
+    margin: 0px 300px;
+    margin-top: 60px;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 150px;
     border-radius: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 60px 300px;
     background-color: #F9F9F9;
 }
 
-.form-container .hit-me-up {
+.hit-me-up {
     font-size: 22px;
-    margin-bottom: 40px;
 }
 
 .form-element {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+    margin: 40px;
 }
 
-.form-container .form-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+.form-group {
+    margin-bottom: 10px;
 }
 
-.form-group .one {
+.form-group-one {
+    display: flex;
+    justify-content: center;
+}
+
+.form-group-two {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
 }
 
-input[type="text"],
-input[type="email"],
+.form-group-three {
+    display: flex;
+    justify-content: center;
+}
+
+.form-group-four {
+    display: flex;
+    justify-content: center;
+}
+
+.full-name, .email, 
 .message-textarea {
     width: 100%;
     padding: 20px;
@@ -135,9 +133,8 @@ input[type="email"],
     font-weight: 500;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-.message-textarea:focus {
+.full-name:focus, .email:focus,
+.message-textarea {
     color: #212529;
     background-color: #fff;
     border-color: #86b7fe;
@@ -158,7 +155,7 @@ input[type="email"]:focus,
     padding: 15px;
     background-color: #4d73ff;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     border: none;
     border-radius: 30px;

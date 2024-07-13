@@ -52,6 +52,12 @@ html, body {
         flex-direction: column;
         align-items: center;
     }
+
+    .contact-me-title {
+        margin: 0px !important;
+        margin-top: 60px !important;
+        justify-content: center;
+    }    
 }
 
 @media only screen and (max-width: 1400px) {
@@ -162,6 +168,23 @@ html, body {
     .portfolio-swiper-container {
         margin: 60px 250px !important;
     }
+
+    .form-container {
+        margin: 60px 250px !important;
+    }
+
+    .form-group-two {
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .full-name, .email {
+        width: auto !important;
+    }
+
+    .send-button {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 920px) {
@@ -204,6 +227,11 @@ html, body {
     .portfolio-swiper-container {
         margin: 60px 100px !important;
     }
+
+    .form-container {
+        margin: 60px 100px !important;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -226,6 +254,14 @@ html, body {
     .portfolio-swiper-container {
         margin: 60px 50px !important;
     } 
+
+    .form-container {
+        margin: 60px 50px !important;
+    }
+
+    .contact-me-container {
+        width: 600px !important;
+    }
 }
 
 @media only screen and (max-width: 300px) {
