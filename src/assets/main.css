@@ -1,0 +1,283 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    height: 100%;
+    background-color: #2d2e32;
+    font-family: "Open Sans";
+    scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 1720px) {
+    .about-me-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .about-me-image {
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .about-me-text {
+        align-items: center;
+        padding: 0px;
+        margin: 0px 100px;
+    }
+
+    .portfolio-item {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 50px !important;
+        gap: 20px;
+    }
+
+    .portfolio-item .portfolio-image {
+        width: 100% !important;
+    }
+
+    .portfolio-image img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+    .portfolio-description {
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .portfolio-swiper-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-me-title {
+        margin: 0px !important;
+        margin-top: 60px !important;
+        justify-content: center;
+    }    
+}
+
+@media only screen and (max-width: 1400px) {
+    .navbar-elements{
+        padding: 10px 60px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 1000;
+    }
+
+    .navbar-links.open {
+        display: flex;
+    }
+
+    .navbar-links .close {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
+
+    .navbar-links svg {
+        width: 24px;
+        height: 24px;
+        fill: #2D2E32;
+    }
+
+    .navbar-links a {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+
+    .navbar-links a:hover {
+        color: #147EFB;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        align-items: center;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .hero-text .hello-text {
+        font-size: 28px;
+    }
+    
+    .hero-text .firstname-text {
+        font-size: 43px;
+    }
+    
+    .hero-text .lastname-text {
+        font-size: 43px;
+    }
+    
+    .hero-text .a-text {
+        font-size: 24px;
+    }
+
+    .hero-text .skill-text {
+        font-size: 27px;
+    }
+
+    .hire-me {
+        font-size: 15px;
+    }
+
+    .portfolio {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        padding-bottom: 50px;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .techstack-swiper-container {
+        padding: 60px 0px !important;
+    }
+
+    .portfolio-swiper-container {
+        margin: 60px 250px !important;
+    }
+
+    .form-container {
+        margin: 60px 250px !important;
+    }
+
+    .form-group-two {
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .full-name, .email {
+        width: auto !important;
+    }
+
+    .send-button {
+        width: 100% !important;
+    }
+
+    .footer-elements {
+        margin: 20px 60px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .navbar-elements {
+        padding: 10px 60px;
+    }
+
+    .navbar-links a {
+        font-size: 20px;
+    }
+
+    .hero-text .hello-text {
+        font-size: 22px;
+    }
+    
+    .hero-text .firstname-text {
+        font-size: 38px;
+    }
+    
+    .hero-text .lastname-text {
+        font-size: 38px;
+    }
+    
+    .hero-text .a-text {
+        font-size: 19px;
+    }
+
+    .hero-text .skill-text {
+        font-size: 22px;
+    }
+
+    .hire-me {
+        font-size: 14px;
+    }
+
+    .portfolio {
+        font-size: 14px;
+    }
+
+    .portfolio-swiper-container {
+        margin: 60px 100px !important;
+    }
+
+    .form-container {
+        margin: 60px 100px !important;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-container {
+        width: 600px;
+    }
+
+    .techstack-swiper-container {
+        width: 600px;
+    }
+
+    .about-me-container {
+        width: 600px;
+    }
+
+    .portfolio-container {
+        width: 600px;
+    }
+
+    .portfolio-swiper-container {
+        margin: 60px 50px !important;
+    } 
+
+    .form-container {
+        margin: 60px 50px !important;
+    }
+
+    .contact-me-container {
+        width: 600px !important;
+    }
+
+    .footer-container {
+        width: 600px !important;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .navbar-elements {
+        padding: 10px 60px;
+    }
+
+    .navbar-links a {
+        font-size: 18px;
+    }
+}
