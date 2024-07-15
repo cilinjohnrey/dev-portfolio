@@ -69,7 +69,7 @@ export default {
           title: 'PASSAFUND BORROWER APP (March 2023)',
           description: 'Passafund borrower app is a website where the borrowers will create an account to provide their personal information, requirements and documents. In order for passafund and lenders to perform KYC.',
           techStack: ['HTML', 'CSS', 'Vuetify', 'Nuxt.js', 'Laravel'],
-          image: '/Passafund-borrower.png',
+          image: 'Passafund-borrower.png',
           link: 'https://borrower.passafund.com/',
         },
         {
@@ -77,7 +77,7 @@ export default {
           title: 'PASSAFUND CMS APP (May 2023)',
           description: 'Passafund cms app is a website where the passafund  perform KYC to the borrowers and lenders. Manage borrower loan application, lender new market location request passafund app analytics.',
           techStack: ['HTML', 'CSS', 'Vuetify', 'Nuxt.js', 'Laravel'],
-          image: '/Passafund-cms.png',
+          image: 'Passafund-cms.png',
           link: 'https://cms.passafund.com/',
         },
         {
@@ -85,7 +85,7 @@ export default {
           title: 'PASSAFUND LENDER APP (June 2023)',
           description: 'Passafund lender app is a website where the lenders navigate borrower loan application from borrower app. Find borrower loan that fit with their loan approval matrix. Contact borrower directly in just a few clicks.',
           techStack: ['HTML', 'CSS', 'Vuetify', 'Nuxt.js', 'Laravel'],
-          image: '/Passafund-lender.png',
+          image: 'Passafund-lender.png',
           link: 'https://lender.passafund.com/',
         },
       ],
