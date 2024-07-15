@@ -134,7 +134,7 @@ export default {
 }
 
 .full-name:focus, .email:focus,
-.message-textarea {
+.message-textarea:focus {
     color: #212529;
     background-color: #fff;
     border-color: #86b7fe;
