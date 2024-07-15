@@ -1,35 +1,42 @@
 <template>
-    <div class="hero-container">
+    <div id="home" class="hero-container">
         <div class="hero-text">
             <p class="hello-text">Hello, I'm</p>
             <h1 class="firstname-text">John Rey, <span class="lastname-text">Cilin</span></h1>
-            <p class="a-text">A <span class="skill-text">Web Developer</span></p>
+            <p class="a-text">
+                <span>A</span>
+                <VueWriter class="skill-text" :array="arr" :eraseSpeed="50" :typeSpeed="100" :delay="1000" />
+            </p>
             <div class="buttons">
-                <button class="hire-me">HIRE ME</button>
-                <span class="portfolio">VIEW MY PORTFOLIO</span>
+                <router-link to="#contact-me" class="hire-me">
+                    HIRE ME
+                </router-link>
+                <router-link to="#portfolio" class="portfolio">
+                    VIEW MY PORTFOLIO
+                </router-link>
             </div>
             <div class="social-icons">
-                <a class="social-icon" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-linkedin">
-                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                <a class="social-icon" href="https://www.linkedin.com/in/john-rey-cilin-418485238/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="tabler-icon tabler-icon-brand-linkedin">
+                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z">
+                        </path>
                         <path d="M8 11l0 5"></path>
                         <path d="M8 8l0 .01"></path>
                         <path d="M12 16l0 -5"></path>
                         <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
                     </svg>
                 </a>
-                <a class="social-icon" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-github">
-                        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                <a class="social-icon" href="https://github.com/cilinjohnrey" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="tabler-icon tabler-icon-brand-github">
+                        <path
+                            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+                        </path>
                     </svg>
                 </a>
-            </div>
-            <div class="tech-stack">
-                <p>Tech Stack</p>
-                <span class="techstack-border"></span>
-                <div class="icons">
-                    <img src="https://skillicons.dev/icons?i=html,css,js,nuxt,vue,php,laravel,mysql" alt="Tech Stack Icons">
-                </div>
             </div>
         </div>
         <div class="hero-image">
@@ -37,21 +44,29 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return { arr: ["Web Developer"] };
+    },
+};
+</script>
 <style>
 .hero-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 300px;
+    padding-top: 120px;
     background-color: #F9F9F9;
     box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
 
 .hero-text {
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 300px;
+    padding-bottom: 60px;
 }
 
 .hero-text p, h1 {
@@ -76,8 +91,14 @@
 }
 
 .hero-text .a-text {
+    display: flex;
+    align-items: center;
     font-size: 29px;
     font-weight: bold;
+}
+
+.hero-text .a-text span {
+    margin-right: 10px;
 }
 
 .hero-text .skill-text {
@@ -90,6 +111,7 @@
 }
 
 .hire-me {
+    display: inline-block;
     margin-right: 10px;
     padding: 14px 20px;
     border: none;
@@ -99,6 +121,8 @@
     border-radius: 8px;
     background-color: #147EFB;
     color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .hire-me:hover {
@@ -106,11 +130,13 @@
 }
 
 .portfolio {
+    display: inline-block;
     color: #2D2E32;
     margin: 0 15px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .portfolio:hover {
@@ -160,19 +186,37 @@
 }
 
 .hero-image {
-    flex-shrink: 0; /* ensures the image doesn’t shrink */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* adjusted padding */
-    background-color: #147EFB;
-    border-radius: 50%; /* makes the background color cover underneath a circular image */
+    padding-right: 300px;
+    padding-bottom: 60px;
 }
 
 .hero-image img {
-    width: 400px; /* adjusted width */
-    height: 400px; /* keeping aspect ratio */
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
+    border: 5px solid #147EFB;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+        border-radius: 60% 30% 50% 60% / 30% 50% 60% 30%;
+    }
+    75% {
+        border-radius: 50% 60% 30% 50% / 30% 50% 30% 50%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 </style>

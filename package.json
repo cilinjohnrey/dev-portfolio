@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "swiper": "^11.1.4",
+    "vanilla-tilt": "^1.8.1",
     "vue": "^3.4.21",
-    "vue3-carousel": "^0.3.3"
+    "vue-router": "^4.0.13",
+    "vue-writer": "^2.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

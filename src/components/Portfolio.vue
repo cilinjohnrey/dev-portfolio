@@ -1,46 +1,57 @@
 <template>
   <div class="portfolio-container">
-    <h2 class="portfolio-title">PORTFOLIO</h2>
-    <Carousel v-if="portfolioItems.length">
-      <Slide v-for="item in portfolioItems" :key="item.id">
-        <div class="carousel__item">
+    <div class="portfolio-swiper-container">
+      <h2 class="portfolio-title">PORTFOLIO</h2>
+      <Swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
+        delay: 2500,
+        disableOnInteraction: true,
+      }" :pagination="{
+      clickable: true,
+    }" :navigation="true" @autoplayTimeLeft="onAutoplayTimeLeft" class="portfolioSwiper">
+        <SwiperSlide v-for="item in portfolioItems" :key="item.id">
           <div class="portfolio-item">
-              <div class="portfolio-image">
-                <img :src="item.image" :alt="item.title" />
+            <div class="portfolio-image">
+              <img :src="item.image" :alt="item.title">
+            </div>
+            <div class="portfolio-description">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              <div class="tech-stacks-used">
+                <span v-for="tech in item.techStack" :key="tech">{{ tech }}</span>
               </div>
-              <div class="portfolio-description">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-                <div class="tech-stacks-used">
-                  <span v-for="tech in item.techStack" :key="tech">{{ tech }}</span>
-                </div>
-                <a class="project-link" :href="item.link" target="_blank">Visit</a>
-              </div>
+              <a class="project-link" :href="item.link" target="_blank">Visit</a>
+            </div>
           </div>
-        </div>
-      </Slide>
-
-      <template #addons>
-        <Navigation />
-        <Pagination />
-      </template>
-    </Carousel>
-    <p v-else>No portfolio items available.</p>
+        </SwiperSlide>
+        <template #container-end>
+          <div class="autoplay-progress">
+            <svg viewBox="0 0 48 48" ref="progressCircle">
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref="progressContent"></span>
+          </div>
+        </template>
+      </Swiper>
+    </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
+import { ref } from 'vue';
 
-export default defineComponent({
-  name: 'Portfolio',
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+export default {
+  setup() {
+    const progressCircle = ref(null);
+    const progressContent = ref(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+      progressCircle.value.style.setProperty('--progress', 1 - progress);
+      progressContent.value.textContent = `${Math.ceil(time / 1000)}s`;
+    };
+    return {
+      onAutoplayTimeLeft,
+      progressCircle,
+      progressContent,
+    };
   },
   data() {
     return {
@@ -50,7 +61,7 @@ export default defineComponent({
           title: 'PASSATXT (June 2022)',
           description: 'Passatxt is a bulk sms and efficiency tool used by hinulawanlab, passaFund, and goizzi lending corp. to notify customers. It provides send now for messages to send instantly and send later for messages to be scheduled.',
           techStack: ['HTML', 'CSS', 'Bootstrap', 'Vue.js', 'Laravel'],
-          image: 'Passatxt.png', 
+          image: 'Passatxt.png',
           link: 'https://passatxt.com/',
         },
         {
@@ -74,21 +85,20 @@ export default defineComponent({
           title: 'PASSAFUND LENDER APP (June 2023)',
           description: 'Passafund lender app is a website where the lenders navigate borrower loan application from borrower app. Find borrower loan that fit with their loan approval matrix. Contact borrower directly in just a few clicks.',
           techStack: ['HTML', 'CSS', 'Vuetify', 'Nuxt.js', 'Laravel'],
-          image: '/Passafund-lender.jpeg',
+          image: '/Passafund-lender.png',
           link: 'https://lender.passafund.com/',
         },
       ],
     }
   }
-})
+};
 </script>
 
-<style>
+<style scoped>
 .portfolio-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 300px;
   background-color: #F9F9F9;
   box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
@@ -100,35 +110,89 @@ export default defineComponent({
   color: #147EFB;
 }
 
-.carousel__item {
+.portfolio-swiper-container {
+  margin: 60px 300px;
+}
+
+.swiper {
   width: 100%;
-  background-color: #FFFFFF;
-  color: #333;
-  font-size: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 
-.portfolio-item {   
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.portfolio-item {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   width: 100%;
+  height: 100%;
   padding: 90px;
   border-radius: 30px;
+  background-color: #fff;
 }
 
-.portfolio-item .portfolio-image {
-  width: 49%;
-}
-
-.portfolio-item .portfolio-image img {
+.portfolio-image {
   width: 100%;
-  border-radius: 8px;
+  height: 50%;
+}
+
+.portfolio-image img {
+  width: 516px;
+  height: 319px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(85, 0, 0, 0.1);
 }
 
 .portfolio-description {
@@ -136,7 +200,7 @@ export default defineComponent({
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  width: 49%;
+  width: 100%;
 }
 
 .portfolio-description h3 {
@@ -160,25 +224,15 @@ export default defineComponent({
 
 .tech-stacks-used span {
   padding: 8px 22px;
-  border-radius: 2px;
+  border-radius: 30px;
   font-size: 16px;
   background-color: #FFFFFF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-link {
   color: #1e90ff;
   text-decoration: none;
   margin-top: 20px;
-}
-
-.carousel__slide {
-  padding: 10px;
-}
-
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  border: 5px solid transparent;
 }
 </style>
